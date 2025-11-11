@@ -45,7 +45,6 @@ body {
   --current-picker-filter: var(--light-picker-filter);
   color-scheme: light;
 }
-
 #theme-sun {
   display: block;
 }
@@ -53,23 +52,62 @@ body {
   display: none;
 }
 
-/*ciemny motyw*/
-body:has(#theme-toggle:checked) {
-  --current-bg: var(--dark-bg);
-  --current-text: var(--dark-text);
-  --current-container-bg: var(--dark-container-bg);
-  --current-input-bg: var(--dark-input-bg);
-  --current-input-border: var(--dark-input-border);
-  --current-shadow: var(--dark-shadow);
-  --current-picker-filter: var(--dark-picker-filter);
-  color-scheme: dark;
+/*przy ciemnym motywie*/
+@media (prefers-color-scheme: dark) {
+  body {
+    --current-bg: var(--dark-bg);
+    --current-text: var(--dark-text);
+    --current-container-bg: var(--dark-container-bg);
+    --current-input-bg: var(--dark-input-bg);
+    --current-input-border: var(--dark-input-border);
+    --current-shadow: var(--dark-shadow);
+    --current-picker-filter: var(--dark-picker-filter);
+    color-scheme: dark;
+  }
+  #theme-sun {
+    display: none;
+  }
+  #theme-moon {
+    display: block;
+  }
 }
 
-body:has(#theme-toggle:checked) #theme-sun {
-  display: none;
+@media (prefers-color-scheme: dark) {
+  body:has(#theme-toggle:checked) {
+    --current-bg: var(--light-bg);
+    --current-text: var(--light-text);
+    --current-container-bg: var(--light-container-bg);
+    --current-input-bg: var(--light-input-bg);
+    --current-input-border: var(--light-input-border);
+    --current-shadow: var(--light-shadow);
+    --current-picker-filter: var(--light-picker-filter);
+    color-scheme: light;
+  }
+  body:has(#theme-toggle:checked) #theme-sun {
+    display: block;
+  }
+  body:has(#theme-toggle:checked) #theme-moon {
+    display: none;
+  }
 }
-body:has(#theme-toggle:checked) #theme-moon {
-  display: block;
+
+@media (prefers-color-scheme: light) {
+  body:has(#theme-toggle:checked) {
+    --current-bg: var(--dark-bg);
+    --current-text: var(--dark-text);
+    --current-container-bg: var(--dark-container-bg);
+    --current-input-bg: var(--dark-input-bg);
+    --current-input-border: var(--dark-input-border);
+    --current-shadow: var(--dark-shadow);
+    --current-picker-filter: var(--dark-picker-filter);
+    color-scheme: dark;
+  }
+  body:has(#theme-toggle:checked) #theme-sun {
+    display: none;
+  }
+  body:has(#theme-toggle:checked) #theme-moon {
+    display: block;
+  }
 }
 
 html {
