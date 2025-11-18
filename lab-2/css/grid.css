@@ -1,0 +1,139 @@
+/* Reset stylów */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  text-decoration: none;
+}
+body {
+  font-family: Arial, sans-serif;
+  background-color: #eeeeee;
+  max-width: 1200px;
+  margin: auto;
+}
+
+.container {
+  background-color: #f5f4f4;
+  display: grid;
+  grid-template-columns: 1fr;
+  grid-template-areas:
+    'header'
+    'nav'
+    'main'
+    'aside'
+    'footer';
+}
+
+header {
+  grid-area: header;
+}
+nav {
+  grid-area: nav;
+}
+main {
+  grid-area: main;
+}
+aside {
+  grid-area: aside;
+}
+footer {
+  grid-area: footer;
+}
+
+main,
+aside {
+  h1,
+  h2,
+  h3,
+  p {
+    margin-bottom: 1rem;
+    line-height: 1.5;
+  }
+}
+
+main {
+  padding: 2vh;
+}
+
+header {
+  background-color: orange;
+  color: white;
+  padding: 2vh;
+  display: flex;
+  justify-content: flex-start;
+}
+
+div.logo {
+  border-radius: 4px;
+  background-color: white;
+  align-content: center;
+  padding: 1vh;
+  padding-right: 1.4vh;
+  margin-right: 2vh;
+}
+
+.logo::before {
+  content: 'Logo';
+  color: black;
+  font-weight: bold;
+  margin-left: 1vh;
+}
+
+nav {
+  background-color: #4c7fb4;
+  color: white;
+  font-weight: bold;
+  padding: 2vh;
+  padding-left: 4vh;
+  text-align: center;
+}
+
+a {
+  color: #ffffff;
+  padding: 0.8vh;
+}
+a:visited {
+  color: #ffffff;
+}
+a:hover {
+  color: #8eb5de;
+}
+
+aside {
+  background-color: #daeee0;
+  font-weight: bolder;
+  padding: 2vh;
+}
+
+aside div span {
+  font-size: 8vh;
+  display: inline-block;
+  margin-bottom: 2vh;
+}
+
+aside div {
+  text-align: center;
+}
+
+footer {
+  background-color: #5aaa69;
+  color: white;
+  padding: 2vh;
+  text-align: center;
+}
+
+@media (min-width: 1024px) {
+  nav {
+    text-align: left;
+  }
+
+  /*panel boczny*/
+  .container {
+    grid-template-columns: 3fr 1fr;
+    grid-template-areas:
+      'header header'
+      'nav    nav'
+      'main   aside'
+      'footer footer';
+  }
+}
