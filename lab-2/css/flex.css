@@ -1,0 +1,283 @@
+body {
+  font-family: Arial, sans-serif;
+  margin: 0;
+  padding: 1rem;
+}
+
+/* Wariant */
+legend {
+  font-weight: bold;
+}
+
+fieldset {
+  border-radius: 8px;
+  border-width: 3px;
+  border-color: orange;
+  border-style: solid;
+  background-color: #f4f5df;
+}
+
+.container {
+  border-radius: 8px;
+  border-width: 3px;
+  border-color: orange;
+  border-style: solid;
+  background-color: #f4f5df;
+  padding: 20px;
+  margin-top: 20px;
+  display: flex;
+  gap: 10px; /*dla niebieskiego, bo inaczej sie rozjedzie*/
+}
+
+.item {
+  text-align: center;
+  color: white;
+  padding: 20px;
+  border-radius: 8px;
+  box-sizing: border-box;
+}
+
+/* uzywam drugiego podejscia zagniezdzania media queries, bo uwazam, ze jest czytelniejsze */
+
+/* szerokie ekrany */
+
+/* niebieski */
+header:has(input[name='version'][value='blue']:checked) ~ .container {
+  flex-direction: column;
+  flex-wrap: wrap;
+  align-content: space-between;
+  justify-content: flex-start;
+  height: 140px;
+  gap: 20px;
+}
+
+header:has(input[name='version'][value='blue']:checked) ~ .container .item {
+  background-color: blue;
+  flex: 0 0 auto;
+  width: 30%;
+}
+
+header:has(input[name='version'][value='blue']:checked)
+  ~ .container
+  .item:nth-child(1) {
+  order: 1;
+}
+header:has(input[name='version'][value='blue']:checked)
+  ~ .container
+  .item:nth-child(4) {
+  order: 2;
+}
+header:has(input[name='version'][value='blue']:checked)
+  ~ .container
+  .item:nth-child(3) {
+  order: 4;
+}
+header:has(input[name='version'][value='blue']:checked)
+  ~ .container
+  .item:nth-child(5) {
+  order: 5;
+}
+
+header:has(input[name='version'][value='blue']:checked)
+  ~ .container
+  .item:nth-child(2) {
+  order: 3;
+  margin-bottom: 150px;
+}
+
+/* czerwony */
+header:has(input[name='version'][value='red']:checked) ~ .container {
+  flex-direction: row;
+  flex-wrap: nowrap;
+  align-items: stretch;
+  height: auto;
+  gap: 20px;
+}
+
+header:has(input[name='version'][value='red']:checked) ~ .container .item {
+  background-color: red;
+  flex: 1 1 0;
+  width: auto;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
+
+header:has(input[name='version'][value='red']:checked)
+  ~ .container
+  .item:nth-child(1) {
+  order: 3;
+  font-weight: bold;
+  flex-grow: 2;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
+header:has(input[name='version'][value='red']:checked)
+  ~ .container
+  .item:nth-child(1)::after {
+  content: '(Jestem większy i na środku!)';
+  font-size: 80%;
+  font-weight: normal;
+  margin-top: 5px;
+}
+header:has(input[name='version'][value='red']:checked)
+  ~ .container
+  .item:nth-child(2) {
+  order: 1;
+  margin-bottom: 0;
+}
+header:has(input[name='version'][value='red']:checked)
+  ~ .container
+  .item:nth-child(3) {
+  order: 2;
+}
+header:has(input[name='version'][value='red']:checked)
+  ~ .container
+  .item:nth-child(4) {
+  order: 4;
+}
+header:has(input[name='version'][value='red']:checked)
+  ~ .container
+  .item:nth-child(5) {
+  order: 5;
+}
+
+/* zielony szeroki */
+header:has(input[name='version'][value='green']:checked) ~ .container {
+  flex-direction: row;
+  flex-wrap: nowrap;
+  align-items: center;
+  justify-content: space-between;
+  height: auto;
+}
+
+header:has(input[name='version'][value='green']:checked) ~ .container .item {
+  background-color: green;
+  flex: 0 0 auto;
+}
+
+/* blok z emoji */
+header:has(input[name='version'][value='green']:checked)
+  ~ .container
+  .item:nth-child(1) {
+  width: 27%;
+  display: flex;
+  font-weight: bold; /*nie jestem pewna czy 4 tez jest bold..*/
+  justify-content: space-between;
+  align-items: center;
+  padding-left: 15px;
+  padding-right: 15px;
+}
+
+header:has(input[name='version'][value='green']:checked)
+  ~ .container
+  .item:nth-child(1)::before,
+header:has(input[name='version'][value='green']:checked)
+  ~ .container
+  .item:nth-child(1)::after {
+  content: '😀';
+  font-size: 2em;
+  line-height: 0.5;
+  vertical-align: middle;
+}
+
+/* bloki 2-5 */
+header:has(input[name='version'][value='green']:checked)
+  ~ .container
+  .item:nth-child(2) {
+  width: 24%;
+}
+header:has(input[name='version'][value='green']:checked)
+  ~ .container
+  .item:nth-child(3) {
+  width: 21%;
+}
+header:has(input[name='version'][value='green']:checked)
+  ~ .container
+  .item:nth-child(4) {
+  width: 14%;
+}
+header:has(input[name='version'][value='green']:checked)
+  ~ .container
+  .item:nth-child(5) {
+  width: 8%;
+}
+
+/* wezsze ekrany*/
+@media (max-width: 1024px) {
+  /* niebieski */
+  header:has(input[name='version'][value='blue']:checked) ~ .container {
+    flex-direction: column;
+    flex-wrap: nowrap;
+    height: auto;
+    align-items: center;
+    align-content: stretch;
+  }
+  header:has(input[name='version'][value='blue']:checked) ~ .container .item {
+    flex: 0 1 auto;
+    width: 60%;
+    max-width: 600px;
+    order: 0;
+  }
+  header:has(input[name='version'][value='blue']:checked)
+    ~ .container
+    .item:nth-child(2) {
+    margin-bottom: 0;
+  }
+
+  /* czerwony */
+  header:has(input[name='version'][value='red']:checked) ~ .container {
+    flex-wrap: wrap;
+    justify-content: center;
+  }
+  header:has(input[name='version'][value='red']:checked) ~ .container .item {
+    flex: 1 1 45%;
+    width: 45%;
+  }
+  header:has(input[name='version'][value='red']:checked)
+    ~ .container
+    .item:nth-child(1) {
+    flex-basis: 100%;
+    width: 100%;
+  }
+
+  /* zielony */
+  header:has(input[name='version'][value='green']:checked) ~ .container {
+    flex-direction: column-reverse;
+    flex-wrap: nowrap;
+    align-items: flex-end; /*do prawej*/
+  }
+
+  header:has(input[name='version'][value='green']:checked) ~ .container .item {
+    flex: 0 1 auto;
+    max-width: none;
+  }
+
+  /* zielony - schodki */
+  header:has(input[name='version'][value='green']:checked)
+    ~ .container
+    .item:nth-child(5) {
+    width: 30%;
+  }
+  header:has(input[name='version'][value='green']:checked)
+    ~ .container
+    .item:nth-child(4) {
+    width: 45%;
+  }
+  header:has(input[name='version'][value='green']:checked)
+    ~ .container
+    .item:nth-child(3) {
+    width: 60%;
+  }
+  header:has(input[name='version'][value='green']:checked)
+    ~ .container
+    .item:nth-child(2) {
+    width: 75%;
+  }
+  header:has(input[name='version'][value='green']:checked)
+    ~ .container
+    .item:nth-child(1) {
+    width: 90%;
+  }
+}
