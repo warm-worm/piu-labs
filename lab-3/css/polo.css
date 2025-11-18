@@ -139,6 +139,7 @@ legend {
   border-radius: 50%;
   border: 2px solid #1f1f1fd8;
   cursor: pointer;
+  transition: all 0.3s ease;
 }
 
 #color-blue + label {
@@ -157,30 +158,61 @@ legend {
 #color input[type='radio']:checked + label {
   border: 3.5px solid #eeeeee;
   box-shadow: 0 0 0 2px black;
+  transform: scale(1.1);
+}
+
+#color label:hover {
+  transform: scale(1.05);
 }
 
 #polo-images {
+  position: relative;
   flex: 1 1 500px;
   order: 1;
   max-width: 500px;
-  min-width: 300px;
-  max-height: 500px;
+  aspect-ratio: 1/1; /*zawsze kwadrat*/
   border: var(--current-container-border) solid 2px;
   border-radius: 8px;
   background-color: white;
-  min-height: 400px;
   overflow: hidden;
   display: flex;
   align-items: center;
   justify-content: center;
-  justify-self: center;
-  align-self: center;
 }
 
 .polo-image {
+  position: absolute;
+  width: 100%;
+  height: 100%;
   max-width: 500px;
-  max-height: 500px;
-  display: none;
+  aspect-ratio: 1/1; /*zawsze kwadrat*/
+  object-fit: cover;
+  opacity: 0;
+  transition: opacity 0.6s ease-in-out;
+}
+
+#img-blue {
+  opacity: 1;
+}
+
+body:has(#color-red:checked) #img-red {
+  opacity: 1;
+}
+body:has(#color-red:checked) #img-blue {
+  opacity: 0;
+}
+
+body:has(#color-green:checked) #img-green {
+  opacity: 1;
+}
+body:has(#color-green:checked) #img-blue {
+  opacity: 0;
+}
+
+body:has(#color-yellow:checked) #img-yellow {
+  opacity: 1;
+}
+body:has(#color-yellow:checked) #img-blue {
   opacity: 0;
 }
 
@@ -239,9 +271,11 @@ body:has(#color-yellow:checked) #img-blue {
   font-family: sans-serif;
   font-weight: bold;
   color: #333;
+  transition: all 0.3s ease;
 }
 
 #size input[type='radio']:checked + label {
+  transform: scale(1.1);
   background-color: var(--current-input-bg);
   color: white;
 }
@@ -264,6 +298,13 @@ button {
   cursor: pointer;
   font-size: 16px;
   font-weight: bold;
+  transition: transform 0.15s ease, box-shadow 0.15s ease,
+    background-color 0.2s ease;
+}
+
+button:hover {
+  transform: scale(1.03);
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.25);
 }
 
 main > *:first-child {
