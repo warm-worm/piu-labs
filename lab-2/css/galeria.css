@@ -1,0 +1,69 @@
+body {
+  font-family: Arial, sans-serif;
+  background-color: #eeeeee;
+  background-image: linear-gradient(to bottom, #eeeeee, #dfdada);
+  max-width: 1600px;
+  margin: auto;
+  min-height: 100vh;
+}
+
+h1 {
+  text-align: center;
+  margin-top: 5vh;
+  margin-bottom: 3vh;
+  color: #333;
+  font-size: 2.5rem;
+  letter-spacing: 2px;
+  text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.1);
+  background: linear-gradient(to right, #444444, #777777);
+  -webkit-background-clip: text;
+  background-clip: text;
+  color: transparent;
+  font-weight: 800;
+}
+
+figure {
+  margin: 0;
+  padding: 10px;
+  background-color: #f0f0f0;
+  border-radius: 8px;
+  box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+  transition: transform 0.5s ease-in-out;
+  filter: grayscale(30%);
+  cursor: pointer;
+}
+
+figure:hover {
+  transform: scale(1.02);
+  filter: grayscale(0%);
+  z-index: 1; /*nad sasiadami*/
+}
+
+img {
+  width: 100%;
+  height: auto;
+  display: block;
+  border-radius: 5px;
+}
+
+.gallery {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 20px;
+  padding: 20px;
+  max-width: 1600px;
+  margin: 0 auto;
+}
+
+figcaption {
+  text-align: center;
+  margin-top: 15px;
+  font-style: italic;
+  font-weight: 600;
+}
+
+@media (min-width: 1200px) {
+  .gallery {
+    grid-template-columns: 1fr 1fr;
+  }
+}
