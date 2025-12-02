@@ -2,11 +2,41 @@
 <html lang="pl">
   <head>
     <meta charset="UTF-8" />
-    <title>Lab 4</title>
-    <link rel="stylesheet" href="css/style.css" />
+    <title>Kanban</title>
+    <link rel="stylesheet" href="css/kanban.css" />
   </head>
   <body>
-    <h1>Lab 4</h1>
-    <a href="..">Powrót</a>
+    <h1>Kanban</h1>
+
+    <div id="board">
+      <div class="column" data-column="todo">
+        <h2>Do zrobienia (<span class="count">0</span>)</h2>
+        <div class="cards">
+          <button class="add-card">Dodaj kartę</button>
+          <button class="color-column">Koloruj kolumnę</button>
+          <button class="sort-cards">Sortuj</button>
+        </div>
+      </div>
+
+      <div class="column" data-column="doing">
+        <h2>W trakcie (<span class="count">0</span>)</h2>
+        <div class="cards">
+          <button class="add-card">Dodaj kartę</button>
+          <button class="color-column">Koloruj kolumnę</button>
+          <button class="sort-cards">Sortuj</button>
+        </div>
+      </div>
+
+      <div class="column" data-column="done">
+        <h2>Zrobione (<span class="count">0</span>)</h2>
+        <div class="cards">
+          <button class="add-card">Dodaj kartę</button>
+          <button class="color-column">Koloruj kolumnę</button>
+          <button class="sort-cards">Sortuj</button>
+        </div>
+      </div>
+    </div>
+
+    <script src="kanban.js"></script>
   </body>
 </html>

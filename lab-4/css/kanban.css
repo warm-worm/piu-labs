@@ -1,0 +1,110 @@
+body {
+  font-family: Arial, sans-serif;
+  background: #ececec;
+  background-image: linear-gradient(to bottom, #22213e, #773d67);
+  min-height: 100vh;
+  margin: 0;
+  padding: 20px;
+}
+
+h1 {
+  text-align: center;
+  color: #ececec;
+}
+
+#board {
+  display: flex;
+  gap: 20px;
+  justify-content: center;
+}
+
+.column {
+  display: flex;
+  flex-direction: column;
+  background: #101206;
+  padding: 15px;
+  border-radius: 6px;
+  width: 300px;
+  box-shadow: 0 0 5px #000000;
+}
+
+.column h2 {
+  margin-top: 0;
+  color: #ececec;
+}
+
+button {
+  width: 100%;
+  margin: 2px 0;
+  border-radius: 6px;
+  padding: 6px;
+  cursor: pointer;
+  color: #bcbdc0;
+  background-color: #242528;
+}
+
+button:hover {
+  background-color: #1f2124;
+}
+
+.text {
+  font-weight: bolder;
+}
+
+.cards {
+  color: #242528;
+  background-color: #101206;
+  border-radius: 6px;
+  margin-top: 10px;
+  display: flex;
+  flex-direction: column;
+  flex-grow: 1;
+  padding-bottom: 20px;
+  gap: 10px;
+}
+
+.card {
+  padding: 10px;
+  border-radius: 6px;
+  background: #242528;
+  display: flex;
+  flex-direction: column;
+  gap: 5px;
+}
+
+.card-buttons {
+  display: flex;
+  justify-content: space-between;
+}
+
+.card button {
+  padding: 3px 6px;
+  font-size: 12px;
+  background-color: #ececec;
+  color: #242528;
+}
+
+.card button:hover {
+  background-color: #dadada;
+  mix-blend-mode: darken;
+}
+
+.card .delete {
+  background: #b71919;
+  color: #ececec;
+}
+
+.card .delete:hover {
+  background-color: #a31313;
+  mix-blend-mode: darken;
+}
+
+.card.dragging {
+  opacity: 0.3;
+  transform: scale(0.97);
+  transition: transform 0.15s, opacity 0.15s;
+}
+
+.cards .card {
+  transition: transform 0.15s;
+}
