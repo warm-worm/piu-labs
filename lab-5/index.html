@@ -1,0 +1,106 @@
+<!DOCTYPE html>
+<html lang="pl">
+  <head>
+    <meta charset="UTF-8" />
+    <title>Kształty – Lab-5</title>
+    <style>
+      body {
+        font-family: Arial, sans-serif;
+        text-align: center;
+        margin: 30px;
+        background: linear-gradient(to bottom, #f8fbfd, #d9e2ec);
+        min-height: 100vh;
+      }
+
+      h2 {
+        color: #333;
+        font-size: 32px;
+      }
+
+      .controls {
+        margin-bottom: 12px;
+      }
+
+      button {
+        margin: 4px;
+        padding: 12px;
+        min-width: 150px;
+        cursor: pointer;
+        border: none;
+        border-radius: 8px;
+        background-color: #5c6bc0;
+        color: white;
+        font-weight: bold;
+        transition: all 0.2s ease;
+      }
+
+      button:hover {
+        background-color: #3949ab;
+        transform: translateY(-2px);
+      }
+
+      .counters {
+        margin: 12px 0;
+        font-size: 18px;
+        font-weight: bold;
+        color: #333;
+      }
+
+      .board {
+        margin: 12px auto;
+        max-width: 750px;
+        min-height: 160px;
+        border: 2px dashed #ccc;
+        padding: 12px;
+        display: flex;
+        flex-wrap: wrap;
+        gap: 10px;
+        background: #ffffff;
+        border-radius: 10px;
+        box-shadow: 0 3px 8px rgba(0, 0, 0, 0.15);
+      }
+
+      .shape {
+        width: 60px;
+        height: 60px;
+        cursor: pointer;
+        transition: transform 0.2s, background-color 0.3s, box-shadow 0.2s;
+        border: 3px solid black;
+        box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2);
+      }
+
+      .shape:hover {
+        transform: scale(1.1);
+        box-shadow: 0 6px 12px rgba(0, 0, 0, 0.3);
+      }
+
+      .square {
+        border-radius: 6px;
+      }
+
+      .circle {
+        border-radius: 50%;
+      }
+    </style>
+  </head>
+  <body>
+    <h2>Kształty</h2>
+
+    <div class="controls">
+      <button id="addSquare">Dodaj kwadrat</button>
+      <button id="addCircle">Dodaj kółko</button>
+      <button id="recolorSquares">Przekoloruj kwadraty</button>
+      <button id="recolorCircles">Przekoloruj kółka</button>
+    </div>
+
+    <div class="counters">
+      <span>Kwadraty: <strong id="cntSquares">0</strong></span>
+      &nbsp;|&nbsp;
+      <span>Kółka: <strong id="cntCircles">0</strong></span>
+    </div>
+
+    <div id="board" class="board"></div>
+
+    <script type="module" src="app.js"></script>
+  </body>
+</html>
